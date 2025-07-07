@@ -1,0 +1,11 @@
+module mux2_to_1(
+input logic d,rst,clk,
+output logic q);
+
+always_ff@(posedge clk)begin
+if(rst)
+q=1'b01;
+else
+q=d;
+end
+endmodule
