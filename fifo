@@ -1,0 +1,21 @@
+module fifo( 
+input logic[1:0] wr_ptr,
+input logic [1:0] rd_ptr,
+input logic [7:0] din,
+input logic clk,
+input logic wr_enb,
+input logic rd_enb,
+output logic [7:0]dout );
+
+logic[7:0] fifo_mem[3:0];
+
+always_ff@(posedge clk) begin
+
+if (wr_enb)begin
+fifo_mem[wr_ptr]<=din;
+end
+if(rd_enb) begin
+dout<=fifo_mem[rd_ptr];
+end
+end
+endmodule
