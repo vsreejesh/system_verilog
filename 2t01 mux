@@ -1,0 +1,14 @@
+module mux2_to_1(
+input logic a,b,
+input logic sel,
+output logic  out
+
+    );
+    always @( *)begin
+    if(sel==2'd0)
+    out<=a;
+    else
+    out<=b;
+    end
+    
+endmodule
